@@ -1,0 +1,46 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaApplication_MVVM_1.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaApplication_MVVM_1.Views.MainView"
+             x:DataType="vm:MainViewModel"
+			 Background="White">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+	<Grid Name="MyGrid" Background="Gray">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		
+		
+		<DataGrid Grid.Column="0" ItemsSource="{Binding YourCollection}" GridLinesVisibility="All" AutoGenerateColumns="False" BorderThickness="1">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Distance" Binding="{Binding Propriete0}" CanUserReorder="False" CanUserSort="False"/>
+				<DataGridTextColumn Header="Jalon 1" Binding="{Binding Propriete1}" CanUserReorder="False" CanUserSort="False"/>
+				<DataGridTextColumn Header="Jalon 2" Binding="{Binding Propriete1}" CanUserReorder="False" CanUserSort="False"/>
+				<DataGridTextColumn Header="Jalon 3" Binding="{Binding Propriete1}" CanUserReorder="False" CanUserSort="False"/>
+				<DataGridTextColumn Header="Jalon 4" Binding="{Binding Propriete1}" CanUserReorder="False" CanUserSort="False"/>
+				<DataGridTextColumn Header="Jalon 5" Binding="{Binding Propriete1}" CanUserReorder="False" CanUserSort="False"/>
+				<DataGridTextColumn Header="Jalon 6" Binding="{Binding Propriete1}" CanUserReorder="False" CanUserSort="False"/>
+				<DataGridTextColumn Header="Jalon 7" Binding="{Binding Propriete1}" CanUserReorder="False" CanUserSort="False"/>
+				<DataGridTextColumn Header="Jalon 8" Binding="{Binding Propriete1}" CanUserReorder="False" CanUserSort="False"/>
+				<DataGridTextColumn Header="Jalon 9" Binding="{Binding Propriete1}" CanUserReorder="False" CanUserSort="False"/>
+				<DataGridTextColumn Header="Jalon 10" Binding="{Binding Propriete1}" CanUserReorder="False" CanUserSort="False"/>
+
+				<!-- Ajoutez plus de colonnes ici jusqu'à Jalon 0 -->
+			</DataGrid.Columns>
+		</DataGrid>
+		<Button Grid.Column="1" Content="Tet" VerticalAlignment="Top" ClickMode="Release" Command="{Binding Button_Jalon1_Clicked}" x:Name="Jalon1_clicked" />
+		
+		
+	</Grid>
+
+  <!--<TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+</UserControl>
